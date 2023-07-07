@@ -1,14 +1,16 @@
+alert("Bienvenido a un simulador de prestamos");
 
+let monto = parseFloat(prompt("Ingresa el dinero"));
+let cuotas = parseInt(prompt("Ingrese las cuotas, la taza de impuesto es del 10%"));
+let tasaImpuesto = 10;
 
-
-alert("Bienvenido a un simulador de prestamo")
-let monto = parseFloat(prompt("Ingrese el monto que desea solicitar"))
-let cuotas = parseInt(prompt("Ingrese la finaciacion"))
-let tasaimpuesto = 10;
-let impuesto = (monto * tasaimpuesto)  / 100;
+let impuesto = (monto * tasaImpuesto) / 100;
 let montoConImpuesto = monto + impuesto;
-let costoFinal = montoConImpuesto / cuotas
 
+alert("Detalle de pagos:");
 
+for (let i = 1; i <= cuotas; i++) {
+let costoFinal = montoConImpuesto / cuotas;
+alert("Cuota mensual " + i + ": $" + costoFinal.toFixed(2));
+}
 
-alert("Cuota mensual: $" + costoFinal.toFixed(2))
